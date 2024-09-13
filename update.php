@@ -53,6 +53,7 @@
         } else {
             echo "Error updating record: " . mysqli_error($conn);
         }
+        header('Location: index.php');
     }
 ?>
 
