@@ -81,7 +81,6 @@
             <select name="grades" class="form-control">
                 <option value="12" <?php echo ($row['grades'] == 12) ? 'selected' : ''; ?>>A</option>
                 <option value="11" <?php echo ($row['grades'] == 11) ? 'selected' : ''; ?>>A-</option>
-                <!-- Add more options similarly -->
             </select>
         </div>
         <div class="mb-3">
@@ -89,17 +88,13 @@
             <select name="placed_inst" class="form-control">
                 <option value="12" <?php echo ($row['placed_inst'] == 12) ? 'selected' : ''; ?>>Egerton University</option>
                 <option value="11" <?php echo ($row['placed_inst'] == 11) ? 'selected' : ''; ?>>Kibabii University</option>
-                <!-- Add more options similarly -->
             </select>
         </div>
         <div class="mb-3">
             <label for="ExampleInputInstitution" class="form-label">High School</label>
             <select name="high_school" class="form-control">
-                <!-- This dropdown should list actual high schools, not grades -->
-                <!-- Example schools added for demonstration -->
                 <option value="12" <?php echo ($row['high_school'] == 12) ? 'selected' : ''; ?>>School A</option>
                 <option value="11" <?php echo ($row['high_school'] == 11) ? 'selected' : ''; ?>>School B</option>
-                <!-- Add more options -->
             </select>
         </div>
         <div class="mb-3">
