@@ -15,7 +15,9 @@
 <body>
   <div class="container">
     <h1>Welcome home!</h1>
-    <a href = "inst-signup.php" class="btn btn-primary" href="#" role="button">Register</a>
+    <a href = "inst-signup.php" class="btn btn-primary" role="button">Add Student</a>
+    <a href = "university-signup.php" class="btn btn-primary" role="button">Add University</a>
+    <a href = "highschool-signup.php" class="btn btn-primary" role="button">Add High School</a>
      
      
     <table class="table">
@@ -39,7 +41,7 @@
   <?php
     $raw = 0;
 
-    $query = "SELECT * FROM tbl_students INNER JOIN tbl_institution ON tbl_students.placed_inst = tbl_institution.inst_id INNER JOIN tbl_grade ON tbl_grade.points = tbl_students.grades";
+    $query = "SELECT * FROM tbl_students INNER JOIN tbl_institution ON tbl_students.placed_inst = tbl_institution.inst_id INNER JOIN tbl_grade ON tbl_grade.points = tbl_students.grades INNER JOIN tbl_highschool ON tbl_institution.inst_id = tbl_highschool.school_id";
     $run = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($run)){
       $raw++; 
@@ -55,7 +57,7 @@
       <td><?php echo $row['phone_no'] ?></td>
       <td><?php echo $row['grade'] ?></td>
       <td><?php echo $row['inst_name'] ?></td>
-      <td><?php echo $row['high_school'] ?></td>
+      <td><?php echo $row['school_name'] ?></td>
       <td><?php echo $row['kcse_year'] ?></td>
       <td style="background-color: <?php echo $row['acc_status'] == 1 ? 'green' : ''; ?>; color: orange;">
     <?php echo $row['acc_status'] == 1 ? 'Active' : 'Inactive'; ?>

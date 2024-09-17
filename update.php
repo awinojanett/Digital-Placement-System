@@ -22,6 +22,7 @@
                   WHERE tbl_students.student_id = '$id'";
         $run = mysqli_query($conn, $query);
         $row = mysqli_fetch_array($run);
+        
     }
 
     // Update logic when form is submitted
