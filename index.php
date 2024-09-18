@@ -17,11 +17,11 @@
     <h1>Welcome home!</h1>
     <a href = "inst-signup.php" class="btn btn-primary" role="button">Add Student</a>
     <a href = "university-signup.php" class="btn btn-primary" role="button">Add University</a>
-    <a href = "highschool-signup.php" class="btn btn-primary" role="button">Add High School</a>
+    <a href = "add_school.php" class="btn btn-primary" role="button">Add High School</a>
      
      
     <table class="table">
-  <thead>
+  <thead class = "bg-dark text-light">
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Index Number</th>
@@ -41,7 +41,11 @@
   <?php
     $raw = 0;
 
-    $query = "SELECT * FROM tbl_students INNER JOIN tbl_institution ON tbl_students.placed_inst = tbl_institution.inst_id INNER JOIN tbl_grade ON tbl_grade.points = tbl_students.grades INNER JOIN tbl_highschool ON tbl_institution.inst_id = tbl_highschool.school_id";
+    $limit = 6;
+    $query = "SELECT * FROM tbl_students INNER JOIN tbl_institution 
+    ON tbl_students.placed_inst = tbl_institution.inst_id 
+    INNER JOIN tbl_grade ON tbl_grade.points = tbl_students.grades 
+    INNER JOIN tbl_highschool ON tbl_institution.inst_id = tbl_highschool.school_id LIMIT $limit";
     $run = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($run)){
       $raw++; 
