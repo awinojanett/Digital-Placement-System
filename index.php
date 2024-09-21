@@ -16,12 +16,12 @@
   <div class="container">
     <h1>Welcome home!</h1>
     <a href = "inst-signup.php" class="btn btn-primary" role="button">Add Student</a>
-    <a href = "university-signup.php" class="btn btn-primary" role="button">Add University</a>
+    <a href = "add_university.php" class="btn btn-primary" role="button">Add University</a>
     <a href = "add_school.php" class="btn btn-primary" role="button">Add High School</a>
      
      
-    <table class="table">
-  <thead class = "bg-dark text-light">
+<table class="table table-bordered table-striped">
+  <thead class = "bg-dark">
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Index Number</th>
@@ -41,11 +41,9 @@
   <?php
     $raw = 0;
 
-    $limit = 6;
-    $query = "SELECT * FROM tbl_students INNER JOIN tbl_institution 
-    ON tbl_students.placed_inst = tbl_institution.inst_id 
-    INNER JOIN tbl_grade ON tbl_grade.points = tbl_students.grades 
-    INNER JOIN tbl_highschool ON tbl_institution.inst_id = tbl_highschool.school_id LIMIT $limit";
+    $query = "SELECT * FROM tbl_students INNER JOIN tbl_grade ON tbl_grade.points = tbl_students.grades INNER JOIN tbl_institution ON tbl_students.placed_inst = tbl_institution.inst_id INNER JOIN tbl_highschool ON tbl_students.high_school = tbl_highschool.school_id";
+
+
     $run = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($run)){
       $raw++; 
