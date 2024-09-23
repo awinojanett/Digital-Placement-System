@@ -1,0 +1,12 @@
+{
+    "name": "hp/autoloading",
+    "authors": [
+        {
+            "name": "Janet Awino",
+            "email": "janetkeyo@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}
