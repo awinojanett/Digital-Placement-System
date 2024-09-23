@@ -10,26 +10,28 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="home.php">Digital Placement System</a>
+  <div class="container">
+    <a class="navbar-brand" href="#">Digital Placement System</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-dark" href="home.php">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Admin
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Student</a></li>
-            <li><a class="dropdown-item" href="#">Institution</a></li>
-          </ul>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
       </ul>
+      <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href ="admin-login.php" class="dropdown-item">Admin</a></li>
+            <li><a href ="student-login.php" class="dropdown-item">Student</a></li>
+            <li><a href ="inst-login.php" class="dropdown-item">Institution</a></li>
+          </ul>
+        </li>
     </div>
   </div>
 </nav>
